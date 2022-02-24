@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type ="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<style>
+
+#feedback { font-size: 1.4em; }
+  #selectabl .ui-selecting { background: #FECA40; }
+  #selectabl .ui-selected { background: #F39814; color: white; }
+  #selectabl { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+  #selectabl li { margin: 3px; padding: 1px; float: left; width: 100px; height: 80px; font-size: 4em; text-align: center; }
+
+
+th,td {
+  padding: 5px;
+}
+
+body {
+  margin: 50px;
+}
+
+label {
+    padding-right: 10px;
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+</style>
+
+
+  <script>
+    function showCustomer(str) {
+      if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+      }
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "getcustomer.php?q="+str);
+      xhttp.send();
+    }
+    function WhichButton(event) {
+      alert("You pressed button: " + event.button)
+    }
+      $( "ALFKI" ).css( "color", "red" );
+  </script>
+
+
+  <script>
+$(document).ready(function(){
+  $("div").last().css("background-color", "blue");
+});
+</script>
+
+<script>
+  $( function() {
+    $( "#selectabl" ).selectable();
+  } );
+  </script>
+
+
+
+</head>
+
+<body>
+
+<marquee behavior="alternate">Bincadeiras</marquee>
+
+<form action=""> 
+  <select name="customers" onchange="showCustomer(this.value)">
+    <option value="">Seleciona o novo treinador :</option>
+    <option value="ALFKI">Jorge Jesus </option>
+    <option value="NORTS ">Sergio Conceicao </option>
+    <option value="WOLZA">Jose Mourinho </option>
+  </select>
+</form>
+<br>
+<div id="txtHint">Obrigado pela a sua escolha ...</div>
+
+<br>
+<br>
+<br>
+
+
+
+<div onmousedown="WhichButton(event);">Click this text (with one of your mouse-buttons)
+<p>
+0 Specifies the left mouse-button<br>
+1 Specifies the middle mouse-button<br>
+2 Specifies the right mouse-button</p>
+<p><strong>Note:</strong> Internet Explorer 8, and earlier, returns another result:<br>
+1 Specifies the left mouse-button<br>
+4 Specifies the middle mouse-button<br>
+2 Specifies the right mouse-button</p>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<object data="img/logo.png"></object>
+
+<br>
+<br>
+<br>
+
+
+<p>This is a paragraph.</p>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in a div.</p>
+  <p>Another paragraph in a div.</p>
+</div>
+<br>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+<br>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+  <h1 style="background-color: gray;">Em que ano O FC Porto foi Fundado</h1>
+<ol id="selectabl">
+  <li class="ui-state-default">1</li>
+  <li class="ui-state-default">8</li>
+  <li class="ui-state-default">9</li>
+  <li class="ui-state-default">3</li>
+</ol>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<label for="upload">Upload progress:</label>
+
+<meter id="upload" name="upload"
+       min="0" max="100"
+       low="33" high="66" optimum="80"
+       value="50">
+    at 50/100
+</meter>
+
+<hr/>
+
+<label for="file">File progress:</label>
+
+<progress id="file" max="100" value="70"> 70% </progress>
+
+</body>
+</html>

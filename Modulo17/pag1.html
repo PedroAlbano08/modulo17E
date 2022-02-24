@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+<script type ="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script >
+
+$(document).ready(function(){
+    $("#treinador").css("font-style", "italic");
+    var nome=$("#treinador").text();
+    $("#treinador")
+        .css("text-decoration","underline")
+        .css({"color":"white","background-color":"black","border":"2px solid blue"})
+        .text("Treinador"+nome);
+        $(".jogadores").css("font-weight","bold");
+});
+</script>
+</head>
+<body>
+<img id = "mying" src="imag/imag1.jpg" width="300" height="200"/>
+<p id = "treinador">Igor Sousa</p>
+<ul class="jogadores">
+            <li>Madalena</li>
+            <li>Diogo</li>
+            <li>Pedro</li>
+            <li>Vera</li>
+            <li>Andre</li>
+            <li>Joana</li>
+            <li>Martin</li>
+            <li>Gonçalo</li>
+            <li>Manel</li>
+            <li>João</li>
+            <li>David</li>
+</body>
+</html>
